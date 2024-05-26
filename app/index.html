@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <!-- Recommended meta tags -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+
+    <!-- Pyodide -->
+    <script
+      type="module"
+      src="https://cdn.jsdelivr.net/pyodide/v0.25.1/full/"
+    ></script>
+
+    <!-- PyScript -->
+    <!--
+        <link rel="stylesheet" href="https://pyscript.net/releases/2024.1.1/core.css">
+        <script type="module" src="https://pyscript.net/releases/2024.1.1/core.js"></script>
+      -->
+
+    <title>Aria's Tale TCG - Python</title>
+    <link rel="stylesheet" href="index.css" />
+    <!-- TODO: favicon -->
+  </head>
+
+  <body>
+    <nav class="navbar">
+      <div class="app-header">
+        <h1>Aria's Tale TCG - Python 🐍🐍</h1>
+      </div>
+    </nav>
+
+    <section class="pyscript">
+      <div id="canvas-container">
+        <div class="loading"></div>
+        <canvas></canvas>
+      </div>
+
+      <script type="py" src="./main.py" config="./pyscript.toml"></script>
+    </section>
+  </body>
+</html>

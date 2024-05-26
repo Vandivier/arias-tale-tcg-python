@@ -1,0 +1,32 @@
+.app-header {
+  background-color: #a2bef4;
+  text-align: center;
+}
+
+.loading {
+  animation: spin 1s ease-in-out infinite;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: black;
+  height: 50px;
+  margin: auto;
+  width: 50px;
+}
+
+canvas {
+  display: none;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.pyscript {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  margin: auto;
+  width: 600px;
+}
