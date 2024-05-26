@@ -37,6 +37,7 @@
           // Initialize canvas and pass it to Pyodide
           const canvas = document.getElementById("gameCanvas");
           pyodide.globals.set("canvas", canvas);
+          pyodide.globals.set("pyodide", pyodide);
 
           // Run the script
           pyodide.runPython(pythonScript);
