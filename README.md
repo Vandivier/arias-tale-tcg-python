@@ -2,6 +2,11 @@
 
 a trading card game built in python
 
+## Usage
+
+1. Run `python build.py`
+2. Drag and drop the `dist/index.html` file into a browser
+
 ## Design Goals
 
 This game should always be open source and prioritize low cost.
@@ -45,3 +50,5 @@ Phaser JavaScript/TypeScript clone of this game (TODO/forthcoming)
 
 1. https://github.com/pyodide/pyodide/issues/289
 2. https://pyscript.com/@examples/fractals-with-numpy-and-canvas/latest
+3. https://pyodide.org/en/stable/usage/index.html
+   1. Pyodide runs Python "through" JavaScript. I can't just <script type="py">

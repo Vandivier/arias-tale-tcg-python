@@ -2,22 +2,8 @@
 
 <html>
   <head>
-    <!-- Recommended meta tags -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-
-    <!-- Pyodide -->
-    <script
-      type="module"
-      src="https://cdn.jsdelivr.net/pyodide/v0.25.1/full/"
-    ></script>
-
-    <!-- PyScript -->
-    <!--
-        <link rel="stylesheet" href="https://pyscript.net/releases/2024.1.1/core.css">
-        <script type="module" src="https://pyscript.net/releases/2024.1.1/core.js"></script>
-      -->
-
     <title>Aria's Tale TCG - Python</title>
     <link rel="stylesheet" href="index.css" />
     <!-- TODO: favicon -->
@@ -30,13 +16,28 @@
       </div>
     </nav>
 
-    <section class="pyscript">
+    <section class="python-container-section">
       <div id="canvas-container">
         <div class="loading"></div>
         <canvas></canvas>
       </div>
 
-      <script type="py" src="./main.py" config="./pyscript.toml"></script>
+      <script src="https://cdn.jsdelivr.net/pyodide/v0.25.1/full/"></script>
+
+      <script type="pyodide" id="app-python-code">
+        <!-- PYTHON_SCRIPT_PLACEHOLDER -->
+      </script>
+
+      <script type="text/javascript">
+        async function main() {
+          const pyodide = await loadPyodide();
+          const pythonScript =
+            document.getElementById("app-python-code").textContent;
+          pyodide.runPython(pythonScript);
+        }
+
+        main();
+      </script>
     </section>
   </body>
 </html>
