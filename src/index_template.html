@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html>
   <head>
     <meta charset="UTF-8" />
@@ -19,17 +18,27 @@
     <section class="python-container-section">
       <div id="canvas-container">
         <div class="loading"></div>
-        <canvas></canvas>
+        <canvas id="gameCanvas" width="800" height="600"></canvas>
       </div>
 
-      <script src="https://cdn.jsdelivr.net/pyodide/v0.25.1/full/pyodide.js"></script>
+      <script src="https://cdn.jsdelivr.net/pyodide/dev/full/pyodide.js"></script>
       <script type="pyodide" id="app-python-code"><!-- PYTHON_SCRIPT_PLACEHOLDER --></script>
 
       <script type="text/javascript">
         async function main() {
           const pyodide = await loadPyodide();
+
+          // Load the pygame-ce package
+          await pyodide.loadPackage("pygame-ce");
+
           const pythonScript =
             document.getElementById("app-python-code").textContent;
+
+          // Initialize canvas and pass it to Pyodide
+          const canvas = document.getElementById("gameCanvas");
+          pyodide.globals.set("canvas", canvas);
+
+          // Run the script
           pyodide.runPython(pythonScript);
         }
 
