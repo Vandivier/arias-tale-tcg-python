@@ -37,7 +37,7 @@ We will anchor to the Chrome browser.
    1. I'm noticing at https://pyodide.org/en/latest/console.html it uses Python 3.12
 2. [pygame](https://www.pygame.org/)
 3. PyScript OR Pyodide - TBD
-   1. Pyodide supports Pygame: https://pyodide.org/en/latest/usage/packages-in-pyodide.html
+   1. Pyodide supports Pygame in v0.26.0.dev0+: https://pyodide.org/en/latest/usage/packages-in-pyodide.html
 4. Deploy on [Cloudflare workers](https://blog.cloudflare.com/python-workers), Vercel Python functions, or AWS via [Flightcontrol](https://www.flightcontrol.dev/).
 
 ## Related Projects
@@ -52,3 +52,4 @@ Phaser JavaScript/TypeScript clone of this game (TODO/forthcoming)
 2. https://pyscript.com/@examples/fractals-with-numpy-and-canvas/latest
 3. https://pyodide.org/en/stable/usage/index.html
    1. Pyodide runs Python "through" JavaScript. I can't just <script type="py">
+4. If you format the HTML file, this might break Python bc indentation. So, remove any whitespace around `<!-- PYTHON_SCRIPT_PLACEHOLDER -->`.
