@@ -38,6 +38,7 @@ We will anchor to the Chrome browser.
 2. [pygame](https://www.pygame.org/)
 3. PyScript OR Pyodide - TBD
    1. Pyodide supports Pygame in v0.26.0.dev0+: https://pyodide.org/en/latest/usage/packages-in-pyodide.html
+   2. PyScript depends on Pyodide, so this isn't an A or B choice. We wait on Pyodide.
 4. Deploy on [Cloudflare workers](https://blog.cloudflare.com/python-workers), Vercel Python functions, or AWS via [Flightcontrol](https://www.flightcontrol.dev/).
 
 ## Related Projects
@@ -53,3 +54,4 @@ Phaser JavaScript/TypeScript clone of this game (TODO/forthcoming)
 3. https://pyodide.org/en/stable/usage/index.html
    1. Pyodide runs Python "through" JavaScript. I can't just <script type="py">
 4. If you format the HTML file, this might break Python bc indentation. So, remove any whitespace around `<!-- PYTHON_SCRIPT_PLACEHOLDER -->`.
+5. https://github.com/pygame/pygame/issues/718
