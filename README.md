@@ -55,3 +55,4 @@ Phaser JavaScript/TypeScript clone of this game (TODO/forthcoming)
    1. Pyodide runs Python "through" JavaScript. I can't just <script type="py">
 4. If you format the HTML file, this might break Python bc indentation. So, remove any whitespace around `<!-- PYTHON_SCRIPT_PLACEHOLDER -->`.
 5. https://github.com/pygame/pygame/issues/718
+6. https://github.com/pyodide/pyodide/issues/4805
