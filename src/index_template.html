@@ -18,7 +18,7 @@
     <section class="python-container-section">
       <div id="canvas-container">
         <div class="loading"></div>
-        <canvas id="gameCanvas" width="800" height="600"></canvas>
+        <canvas id="canvas" width="800" height="600"></canvas>
       </div>
 
       <script src="https://cdn.jsdelivr.net/pyodide/v0.26.0/full/pyodide.js"></script>
@@ -27,17 +27,16 @@
       <script type="text/javascript">
         async function main() {
           const pyodide = await loadPyodide();
+          pyodide.globals.set("pyodide", pyodide);
+          const sdl2Canvas = document.getElementById("canvas");
+          pyodide.globals.set("canvas", sdl2Canvas); // TODO: maybe not needed
+          pyodide.canvas.setCanvas2D(sdl2Canvas);
 
           // Load the pygame-ce package
           await pyodide.loadPackage("pygame-ce");
 
           const pythonScript =
             document.getElementById("app-python-code").textContent;
-
-          // Initialize canvas and pass it to Pyodide
-          const canvas = document.getElementById("gameCanvas");
-          pyodide.globals.set("canvas", canvas);
-          pyodide.globals.set("pyodide", pyodide);
 
           // Run the script
           pyodide.runPython(pythonScript);

@@ -1,5 +1,6 @@
 import pygame
-import sys
+
+# import sys
 
 
 def main():
@@ -26,7 +27,7 @@ def main():
         clock.tick(30)
 
     pygame.quit()
-    sys.exit()
+    # sys.exit()
 
 
 main()
