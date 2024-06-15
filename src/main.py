@@ -11,7 +11,6 @@ async def main():
     screen = pygame.display.set_mode((width, height))
     pygame.display.set_caption("Pygame in Pyodide")
 
-    clock = pygame.time.Clock()
     running = True
 
     while running:
@@ -21,12 +20,8 @@ async def main():
 
         screen.fill((0, 0, 255))
         pygame.draw.rect(screen, (255, 255, 255), (100, 100, 200, 200))
-
         pygame.display.flip()
-        clock.tick(30)
-
-        # Yield control to the event loop to handle async tasks
-        await asyncio.sleep(0)
+        await asyncio.sleep(1 / 30)  # 30 FPS
 
     pygame.quit()
 
