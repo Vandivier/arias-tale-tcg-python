@@ -17,7 +17,6 @@
 
     <section class="python-container-section">
       <div id="canvas-container">
-        <div class="loading"></div>
         <canvas id="canvas" width="800" height="600"></canvas>
       </div>
 
@@ -39,7 +38,7 @@
             document.getElementById("app-python-code").textContent;
 
           // Run the script
-          pyodide.runPython(pythonScript);
+          pyodide.runPythonAsync(pythonScript);
         }
 
         main();

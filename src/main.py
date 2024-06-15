@@ -1,9 +1,8 @@
+import asyncio
 import pygame
 
-# import sys
 
-
-def main():
+async def main():
     pygame.init()
 
     canvas = pyodide.globals.get("canvas")
@@ -26,8 +25,10 @@ def main():
         pygame.display.flip()
         clock.tick(30)
 
+        # Yield control to the event loop to handle async tasks
+        await asyncio.sleep(0)
+
     pygame.quit()
-    # sys.exit()
 
 
-main()
+await main()
