@@ -16,3 +16,12 @@
   margin: auto;
   width: 600px;
 }
+
+#canvas-container {
+  display: flex;
+}
+
+#canvas {
+  margin: auto;
+}
+
